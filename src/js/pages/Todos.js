@@ -3,12 +3,30 @@ import React from "react";
 import Todo from "../components/Todo";
 import TodoStore from "../stores/TodoStore";
 
-export default class Featured extends React.Component {
+export default class Todos extends React.Component {
   constructor(){
     super();
     this.state={
       todos: TodoStore.getAll(),
     };
+  }
+
+  componentWillMount(){
+    TodoStore.on("change", this.getTodos);
+  }
+
+  componentWillUnmount(){
+    TodoStore.removeListener("change", this.getTodos);
+  }
+
+  get Todos(){
+    this.setState({
+      todos: TodoStore.getAll(),
+    });
+  }
+
+  reloadTodos(){
+    TodoActions.reloadTodos();
   }
 
   render(){
