@@ -1,52 +1,28 @@
 import React from "react";
 
-import Todo from "../components/Todo";
-import * as TodoActions from "../actions/TodoActions";
-import TodoStore from "../stores/TodoStore";
 
-
-export default class Layout extends React.Component {
-  constructor() {
+export default class Todo extends React.Component {
+  constructor(props){
     super();
-    this.getTodos = this.getTodos.bind(this);
-    this.state = {
-      todos: TodoStore.getAll(),
-    };
   }
 
-  componentWillMount() {
-    TodoStore.on("change", this.getTodos);
-  }
+  render(){
+    const {complete, edit, text} = this.props;
+    const icon = complete ? "\u2714" : "\u2716"
 
-  componentWillUnmount() {
-    TodoStore.removeListener("change", this.getTodos);
-  }
+    if (edit){
+      return(
+        <li>
+          <input value = {text} focus="focused"/>
+        </li>
+        );
+    }
 
-  getTodos() {
-    this.setState({
-      todos: TodoStore.getAll(),
-    });
-  }
-
-  reloadTodos() {
-    TodoActions.reloadTodos();
-  }
-
-  render() {
-    const { todos } = this.state;
-
-    const TodoComponents = todos.map((todo) => {
-        return <Todo key={todo.id} {...todo}/>;
-    });
-
-    return (
-      <div>
-        <button onClick={this.reloadTodos.bind(this)}>Reload!</button>
-        <h1>Todos</h1>
-        <ul>{TodoComponents}</ul>
-      </div>
-    );
+    return(
+      <li>
+        <span>{text}</span>
+        <span>{icon}</span>
+      </li>
+      );
   }
 }
-
-// this still needs to be completed, code source has not been placed here
