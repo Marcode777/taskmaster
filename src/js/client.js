@@ -13,7 +13,7 @@ const app = document.getElementById('app');
 
 ReactDOM.render(
   <Router history={hashHistory}>
-    <Route path="/" component={Display}>
+    <Route path="/" component={Todos}>
       <IndexRoute component={Display}></IndexRoute>
       <Route path="favorites" component={Favorites}></Route>
       <Route path="settings" component={Settings}></Route>
