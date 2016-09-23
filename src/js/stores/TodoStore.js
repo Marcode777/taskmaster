@@ -6,13 +6,13 @@ class TodoStore extends EventEmitter {
     super()
     this.todos = [
       {
-        id: 12345,
-        text:"Go Shopping",
+        id:12345,
+        text: "Make Money",
         complete: false
       },
       {
-        id: 22345,
-        text: "Pay Bills",
+        id:12346,
+        text:"Go Shopping",
         complete: false
       },
     ];

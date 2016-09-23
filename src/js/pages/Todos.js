@@ -1,40 +1,22 @@
 import React from "react";
-
 import Todo from "../components/Todo";
 import TodoStore from "../stores/TodoStore";
 
-export default class Todos extends React.Component {
+export default class Featured extends React.Component {
   constructor(){
     super();
-    this.state={
-      todos: TodoStore.getAll(),
+    this.state = {
+      todos: TodoStore.getAll(), 
     };
-  }
-
-  componentWillMount(){
-    TodoStore.on("change", this.getTodos);
-  }
-
-  componentWillUnmount(){
-    TodoStore.removeListener("change", this.getTodos);
-  }
-
-  get Todos(){
-    this.setState({
-      todos: TodoStore.getAll(),
-    });
-  }
-
-  reloadTodos(){
-    TodoActions.reloadTodos();
   }
 
   render(){
     const {todos} = this.state;
 
-    const TodoComponents = todos.map((todo)=>{
-      return <Todo key= {todo.id} {...todo}/>;
+    const TodoComponents = todos.map((todo) => {
+      return <Todo key={todo.id} {...todo}/>;
     });
+
     return(
       <div>
         <h1>Todos</h1>
@@ -42,5 +24,4 @@ export default class Todos extends React.Component {
       </div>
       );
   }
-
 }
