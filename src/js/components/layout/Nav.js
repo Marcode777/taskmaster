@@ -26,6 +26,7 @@ export default class Nav extends React.Component {
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
+          <p class="navbar-text">TASKMASTER</p>
             <button type="button" class="navbar-toggle" onClick={this.toggleCollapse.bind(this)} >
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
