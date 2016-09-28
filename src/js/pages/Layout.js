@@ -10,7 +10,12 @@ export default class Layout extends React.Component {
   render() {
     const { location } = this.props;
     const containerStyle = {
-      marginTop: "60px"
+      marginTop: "60px",
+      backgroundImage: 'url("http://onehdwallpaper.com/wp-content/uploads/2015/07/Big-Ben-Beautifl-London-Wallpapers.jpg")',
+      position:"absolute",
+      WebkitBackgroundSize: 'cover', // note the capital 'W' here
+      height:"100%",
+      width:"100%",
     };
 
     return (
