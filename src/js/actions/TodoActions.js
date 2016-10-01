@@ -16,7 +16,6 @@ export function deleteTodo(id){
 
 export function reloadTodos(){
 
-
   
   dispatcher.dispatch({type:"FETCH_TODOS"});
   setTimeout(() => {
