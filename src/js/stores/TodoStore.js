@@ -24,7 +24,7 @@ class TodoStore extends EventEmitter {
     this.todos.push({
       id,
       text,
-      complete: false,
+      complete:false,
     });
 
     this.emit("change");
