@@ -46,7 +46,7 @@ export default class Featured extends React.Component {
     return(
       <div>
         <button onClick={this.createTodo.bind(this)}>CREATE</button>
-        <input/>
+        <input type="text"/>
         <h1>Todos</h1>
         <ul>{TodoComponents}</ul>
       </div>
