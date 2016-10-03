@@ -43,10 +43,13 @@ export default class Featured extends React.Component {
       return <Todo key={todo.id} {...todo}/>;
     });
 
+
+
     return(
       <div>
         <button onClick={this.createTodo.bind(this)}>CREATE</button>
-        <input type="text"/>
+        <input/>
+        <button onClick={this.reloadTodos.bind(this)}>RELOAD</button>
         <h1>Todos</h1>
         <ul>{TodoComponents}</ul>
       </div>

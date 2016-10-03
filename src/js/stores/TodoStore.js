@@ -19,7 +19,8 @@ class TodoStore extends EventEmitter {
   }
 
   createTodo(text){
-    const id =Date.now();
+    const id = Date.now();
+    const complete = false;
 
     this.todos.push({
       id,
