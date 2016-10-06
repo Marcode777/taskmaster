@@ -33,7 +33,7 @@ export default class Featured extends React.Component {
   }
 
   createTodo(){
-    TodoActions.createTodo(Date.now());
+    TodoActions.createTodo(this.refs.input.value, Date.now());
   }
 
   render(){
@@ -48,7 +48,7 @@ export default class Featured extends React.Component {
     return(
       <div>
         <button onClick={this.createTodo.bind(this)}>CREATE</button>
-        <input/>
+        <input ref="input"/>
         <button onClick={this.reloadTodos.bind(this)}>RELOAD</button>
         <h1>Todos</h1>
         <ul>{TodoComponents}</ul>
