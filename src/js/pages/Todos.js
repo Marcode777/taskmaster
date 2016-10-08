@@ -47,7 +47,7 @@ export default class Featured extends React.Component {
 
     return(
       <div>
-        <button onClick={this.createTodo.bind(this)}>CREATE</button>
+        <button onClick={this.createTodo.bind(this)}>CREATE TASK</button>
         <input ref="input"/>
         <button onClick={this.reloadTodos.bind(this)}>RELOAD</button>
         <h1>Todos</h1>
