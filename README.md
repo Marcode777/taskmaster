@@ -1,3 +1,3 @@
 # taskmaster
 
-to work this app, on the terminal, run npm run dev 
+to use this app, on the terminal, run npm run dev 
